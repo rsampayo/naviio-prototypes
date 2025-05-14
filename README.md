@@ -18,9 +18,27 @@ Then open http://localhost:3000 in your browser.
 
 ## Deployment
 
-### Option 1: Deploy to public.ka-ve.io (Production)
+### Option 1: Automated Deployment with GitHub Actions (Recommended)
 
-This project is configured to deploy to the StaticDeploy instance at `public.ka-ve.io`.
+This repository is configured to automatically deploy to StaticDeploy whenever changes are pushed to the `main` branch.
+
+1. Add the StaticDeploy API token to your GitHub repository secrets:
+   - Go to your repository on GitHub
+   - Navigate to Settings > Secrets and variables > Actions
+   - Create a new repository secret named `STATICDEPLOY_API_TOKEN` with your StaticDeploy API token
+
+2. Push your changes to the `main` branch:
+```bash
+git push origin main
+```
+
+3. GitHub Actions will automatically build and deploy your site to public.ka-ve.io
+
+You can check the status of the deployment in the "Actions" tab of your GitHub repository.
+
+### Option 2: Manual Deploy to public.ka-ve.io
+
+If you need to deploy manually, you can use the provided script:
 
 1. Make sure you have the necessary credentials for StaticDeploy
 2. Run the deployment script:
@@ -38,7 +56,7 @@ This script will:
 
 After successful deployment, your site will be available at https://public.ka-ve.io/
 
-### Option 2: Local StaticDeploy for Testing
+### Option 3: Local StaticDeploy for Testing
 
 If you want to test deployment locally before pushing to production:
 
@@ -80,6 +98,7 @@ This will:
 - `staticdeploy-config.json` - Configuration for StaticDeploy
 - `scripts/prepare-bundle.js` - Script to prepare static files for deployment
 - `deploy-to-ka-ve.sh` - Deployment script
+- `.github/workflows/deploy.yml` - GitHub Actions workflow for automated deployment
 
 ## Adding New Prototypes
 
@@ -88,4 +107,4 @@ To add new prototypes:
 1. Create a new directory for your prototype
 2. Add all necessary HTML, CSS, and JS files
 3. Update the main index.html to link to your new prototype
-4. Deploy using the instructions above 
+4. Commit and push to GitHub - the deployment will happen automatically 
