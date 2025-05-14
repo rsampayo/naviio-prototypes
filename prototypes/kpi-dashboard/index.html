@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Dashboard CEO Transporte</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Pantalla principal: Dashboard -->
+    <div id="main-screen" class="screen active">
+        <header class="navigation-header">
+            <div style="width: 44px;"></div> <!-- Espaciador para centrar el título -->
+            <h1 class="navigation-title">Transportes Fronterizos</h1>
+            <div style="width: 44px;"></div> <!-- Espaciador para centrar el título -->
+        </header>
+        <div class="date-info">Dashboard CEO - 15 de marzo, 2025 - 07:05 AM</div>
+        <main class="kpi-grid">
+            <!-- Nuevo KPI de Ventas Totales -->
+            <div class="kpi-card" data-status="good" data-id="ventas">
+                <h3>Ventas Totales</h3>
+                <div class="kpi-value">4.85<span class="unit">M$</span></div>
+                <div class="kpi-context">Mes Actual (Meta: 4.5M$)</div>
+                <div class="kpi-status status-good">7.8% sobre meta</div>
+            </div>
+            <div class="kpi-card" data-status="good" data-id="margen">
+                <h3>Margen Operativo</h3>
+                <div class="kpi-value">12.5<span class="unit">%</span></div>
+                <div class="kpi-context">Mes Acumulado (Ayer: 11.8%)</div>
+                <div class="kpi-status status-good">Tendencia Positiva</div>
+            </div>
+            <div class="kpi-card" data-status="good" data-id="utilizacion">
+                <h3>Utilización de Flota</h3>
+                <div class="kpi-value">88<span class="unit">%</span></div>
+                <div class="kpi-context">440 / 500 Unidades Activas</div>
+                <div class="kpi-status status-good">Óptimo</div>
+            </div>
+            <div class="kpi-card" data-status="good" data-id="otd">
+                <h3>Entregas a Tiempo (OTD)</h3>
+                <div class="kpi-value">96.2<span class="unit">%</span></div>
+                <div class="kpi-context">Últimas 24 horas (Meta: >95%)</div>
+                <div class="kpi-status status-good">Excelente</div>
+            </div>
+            <div class="kpi-card" data-status="warning" data-id="cruce">
+                <h3>Tiempo Prom. Cruce Fronterizo</h3>
+                <div class="kpi-value">4<span class="unit">h</span> 15<span class="unit">m</span></div>
+                <div class="kpi-context">Promedio Laredo (Ayer)</div>
+                <div class="kpi-status status-warning">Elevado vs Prom. Hist. 3h 30m</div>
+            </div>
+            <div class="kpi-card" data-status="bad" data-id="costo-km">
+                <h3>Costo por Kilómetro (CPK)</h3>
+                <div class="kpi-value">1.95<span class="unit">$/km</span></div>
+                <div class="kpi-context">Promedio Flota (Mes Actual)</div>
+                <div class="kpi-status status-bad">Incremento 5% vs Mes Ant.</div>
+            </div>
+            <div class="kpi-card" data-status="good" data-id="rpm">
+                <h3>Ingreso por Kilómetro (RPM)</h3>
+                <div class="kpi-value">2.25<span class="unit">$/km</span></div>
+                <div class="kpi-context">Promedio Flota (Mes Actual)</div>
+                <div class="kpi-status status-good">Estable vs Meta</div>
+            </div>
+            <div class="kpi-card" data-status="warning" data-id="ingreso-camion">
+                <h3>Ingreso Prom. por Camión</h3>
+                <div class="kpi-value">1,250<span class="unit">$/día</span></div>
+                <div class="kpi-context">Promedio mes actual (Meta: $1,350)</div>
+                <div class="kpi-status status-warning">Bajo Meta</div>
+            </div>
+            <div class="kpi-card" data-status="neutral" data-id="costo-mtto">
+                <h3>Costo Mtto. por Kilómetro</h3>
+                <div class="kpi-value">0.18<span class="unit">$/km</span></div>
+                <div class="kpi-context">Acumulado mes (Prev + Correctivo)</div>
+                <div class="kpi-status status-neutral">Estable vs Mes Ant.</div>
+            </div>
+            <div class="kpi-card" data-status="bad" data-id="dso">
+                <h3>Días Cuentas por Cobrar (DSO)</h3>
+                <div class="kpi-value">42<span class="unit">días</span></div>
+                <div class="kpi-context">Al cierre de ayer (Meta: <35 días)</div>
+                <div class="kpi-status status-bad">Alto</div>
+            </div>
+            <div class="kpi-card" data-status="warning" data-id="seguridad">
+                <h3>Incidentes Seguridad / MMkm</h3>
+                <div class="kpi-value">1.2<span class="unit"></span></div>
+                <div class="kpi-context">Últimos 12 meses (Meta: <1.0)</div>
+                <div class="kpi-status status-warning">Requiere Atención</div>
+            </div>
+            <div class="kpi-card" data-status="neutral" data-id="satisfaccion">
+                <h3>Satisfacción Operador</h3>
+                <div class="kpi-value">4.1<span class="unit">/5</span></div>
+                <div class="kpi-context">Encuesta Trim. (Rotación: 8% Anual)</div>
+                <div class="satisfaction-bar-container">
+                    <div class="satisfaction-bar" style="width: 82%;"></div>
+                </div>
+                <div class="kpi-status status-neutral" style="margin-top: 10px;">Mejorable</div>
+            </div>
+        </main>
+    </div>
+    <!-- Pantalla de detalle (se llenará dinámicamente) -->
+    <div id="detail-screen" class="screen offscreen-right">
+        <header class="navigation-header">
+            <div class="back-button">Atrás</div>
+            <h1 class="navigation-title" id="detail-screen-title">Detalle</h1>
+            <div style="width: 44px;"></div> <!-- Espaciador para equilibrar el botón atrás -->
+        </header>
+        <div class="detail-view" id="detail-content">
+            <!-- El contenido se cargará dinámicamente -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 

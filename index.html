@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Naviio - Prototipos</title>
+    <style>
+        :root {
+            --background-color: #f2f2f7;
+            --secondary-background-color: #ffffff;
+            --label-color: #1c1c1e;
+            --secondary-label-color: #6c6c70;
+            --system-blue: #007aff;
+            --system-green: #34c759;
+            --system-orange: #ff9500;
+            --system-red: #ff3b30;
+            --system-yellow: #ffcc00;
+            --system-purple: #af52de;
+            --system-pink: #ff2d55;
+            --system-teal: #5ac8fa;
+            --system-indigo: #5856d6;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1c1c1e;
+                --secondary-background-color: #2c2c2e;
+                --label-color: #ffffff;
+                --secondary-label-color: #8e8e93;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--label-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .prototype-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .prototype-card {
+            background-color: var(--secondary-background-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .prototype-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .prototype-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+        
+        .prototype-description {
+            color: var(--secondary-label-color);
+            font-size: 14px;
+            margin: 0 0 15px 0;
+        }
+        
+        .prototype-link {
+            display: inline-block;
+            background-color: var(--system-blue);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Naviio - Prototipos</h1>
+        <ul class="prototype-list">
+            <li class="prototype-card">
+                <h2 class="prototype-title">Dashboard CEO Transporte</h2>
+                <p class="prototype-description">Dashboard interactivo con KPIs y métricas clave para la gestión de operaciones de transporte.</p>
+                <a href="./prototypes/kpi-dashboard/" class="prototype-link">Ver prototipo</a>
+            </li>
+            <!-- Aquí se pueden agregar más prototipos en el futuro -->
+        </ul>
+    </div>
+</body>
+</html> 

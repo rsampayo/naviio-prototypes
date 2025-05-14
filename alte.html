@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de IA para ALTE Luxury Travel: Bases Sólidas para el Futuro</title>
+    <style>
+        /* Importación de Fuentes ALTE */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        /* Variables de Color ALTE */
+        :root {
+            --alte-primary-blue: #122045; /* Azul Oscuro Principal */
+            --alte-text-on-dark: #FFFFFF;
+            --alte-text-on-light: #122045; 
+            --alte-secondary-text: #4D5874; /* Gris Medio Azulado */
+            --alte-background-light-gray: #EEEEEE; /* Gris Claro para body */
+            --alte-card-background: #FFFFFF; /* Blanco para slides/cards */
+            --alte-border-color: rgba(18, 32, 69, 0.2); /* Azul primario con opacidad */
+            --alte-highlight-background: rgba(18, 32, 69, 0.07);
+        }
+
+        /* Estilos Base */
+        body {
+            font-family: 'Poppins', sans-serif; /* Fuente Sans-Serif para cuerpo */
+            background-color: var(--alte-background-light-gray);
+            color: var(--alte-text-on-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7; /* Ligeramente aumentado para elegancia */
+            overflow-x: hidden;
+        }
+
+        .presentation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos de Diapositivas */
+        .slide {
+            background-color: var(--alte-card-background);
+            padding: 60px; /* Más padding para look lujoso */
+            margin-bottom: 30px;
+            border-radius: 8px; /* Bordes sutiles, más corporativo */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); /* Sombra más suave */
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        
+        .slide-content {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .slide.cover {
+            background-color: var(--alte-primary-blue);
+            color: var(--alte-text-on-dark); /* Color de texto por defecto en la portada */
+            text-align: center;
+            justify-content: center;
+        }
+        .slide.cover h1 {
+            color: var(--alte-text-on-dark); /* Asegura que h1 sea blanco */
+            font-size: 3.2em; 
+        }
+        .slide.cover h1 strong { /* Específicamente para el nombre ALTE dentro del h1 */
+             color: var(--alte-text-on-dark); /* Asegura que el strong también sea blanco */
+        }
+        .slide.cover p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.25em; 
+            max-width: 750px; 
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300; 
+        }
+        .slide.cover .client-logo {
+            max-width: 200px; 
+            margin-bottom: 30px;
+        }
+        .slide.cover .consultant-info { /* Estilo para la info del consultor */
+            font-size: 0.9em; 
+            color: rgba(255, 255, 255, 0.7); 
+            margin-top: 40px; /* Más espacio arriba */
+        }
+
+
+        /* Tipografía ALTE */
+        h1, h2 {
+            font-family: 'Cormorant Garamond', serif; 
+            color: var(--alte-text-on-light);
+            margin-top: 0;
+            margin-bottom: 0.6em;
+            font-weight: 700; 
+        }
+        h1 { 
+            font-size: 2.8em; 
+            font-weight: 700; 
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 2.2em; 
+            font-weight: 700;
+            color: var(--alte-primary-blue); 
+            margin-bottom: 0.8em;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid var(--alte-primary-blue);
+        }
+        h3 { 
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4em;
+            font-weight: 600; 
+            color: var(--alte-primary-blue);
+            margin-bottom: 0.6em;
+        }
+        h4 { 
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            font-weight: 500; 
+            color: var(--alte-secondary-text);
+            margin-bottom: 0.8em;
+        }
+        p {
+            font-size: 1.0em; 
+            color: var(--alte-secondary-text);
+            margin-bottom: 1.3em;
+            font-weight: 400; 
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            font-size: 1.0em;
+            color: var(--alte-secondary-text);
+            margin-bottom: 0.8em;
+            padding-left: 1.8em;
+            position: relative;
+            font-weight: 400;
+        }
+        ul li::before {
+            content: '•'; 
+            color: var(--alte-primary-blue);
+            font-weight: bold;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: -2px; 
+            font-size: 1.4em;
+        }
+        strong { 
+            font-weight: 600; 
+            color: var(--alte-text-on-light);
+        }
+        .sub-list { /* Estilo para sub-listas dentro de li */
+            padding-left: 20px;
+            margin-top: 0.5em;
+            list-style-type: '- ';
+        }
+        .sub-list li {
+            font-size: 0.95em;
+            margin-bottom: 0.4em;
+        }
+        .sub-list li::before {
+            content: '-';
+            font-size: 1.2em;
+            top: -3px;
+        }
+
+
+        /* Elementos Destacados */
+        .highlight {
+            background-color: var(--alte-highlight-background);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-weight: 500; 
+            color: var(--alte-primary-blue);
+        }
+
+        /* Tarjetas */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Ajuste minmax para más tarjetas */
+            gap: 20px; /* Reducción de gap */
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .card {
+            background-color: var(--alte-card-background);
+            border: 1px solid var(--alte-border-color);
+            padding: 25px; /* Reducción de padding */
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(18, 32, 69, 0.08); 
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(18, 32, 69, 0.12);
+        }
+        .card h3 { 
+            font-size: 1.15em; /* Ajuste de tamaño */
+            font-weight: 600;
+            color: var(--alte-primary-blue);
+            margin-top: 0;
+            margin-bottom: 0.6em; /* Reducción de margen */
+        }
+        .card p {
+            font-size: 0.85em; /* Ajuste de tamaño */
+            color: var(--alte-secondary-text);
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        .card ul {
+            margin-top: 8px; /* Reducción de margen */
+        }
+        .card ul li {
+            font-size: 0.8em; /* Ajuste de tamaño */
+            margin-bottom: 0.4em; /* Reducción de margen */
+        }
+        .card ul li::before {
+            font-size: 1.1em; /* Ajuste de tamaño */
+        }
+        .card .card-icon { 
+            font-size: 1.6em; /* Ajuste de tamaño */
+            color: var(--alte-primary-blue);
+            margin-bottom: 10px; /* Reducción de margen */
+            text-align: left; 
+        }
+
+
+        /* Visualizador de Flujo */
+        .workflow-viz-container {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 15px;
+            align-items: stretch;
+            justify-content: center; 
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(18, 32, 69, 0.03); 
+            border-radius: 8px;
+        }
+        .workflow-step {
+            background-color: var(--alte-card-background);
+            color: var(--alte-secondary-text);
+            padding: 15px 20px;
+            border-radius: 6px;
+            border: 1px solid var(--alte-border-color);
+            text-align: center;
+            font-weight: 500; 
+            font-size: 0.9em;
+            min-width: 120px; 
+            box-shadow: 0 2px 4px rgba(18, 32, 69, 0.05);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 70px;
+        }
+        .workflow-step strong { 
+            font-size: 1.05em; 
+            font-weight: 600;
+            color: var(--alte-primary-blue);
+            margin-bottom: 5px;
+            display: block;
+        }
+        .workflow-arrow {
+            font-size: 1.8em;
+            color: var(--alte-primary-blue);
+            margin: 0 5px; 
+            align-self: center;
+        }
+        
+        .client-logo { 
+            max-height: 70px; 
+            width: auto;
+        }
+
+        /* Botón CTA ALTE Style */
+        .cta-button {
+            display: inline-block;
+            font-family: 'Poppins', sans-serif; 
+            background-color: transparent;
+            color: var(--alte-primary-blue);
+            padding: 12px 28px; 
+            border-radius: 4px; 
+            border: 2px solid var(--alte-primary-blue);
+            text-decoration: none;
+            font-weight: 500; 
+            font-size: 1.0em;
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            margin-top: 25px;
+        }
+        .cta-button:hover {
+            background-color: var(--alte-primary-blue); 
+            color: var(--alte-text-on-dark);
+            transform: translateY(-2px);
+        }
+        .text-center {
+            text-align: center;
+        }
+
+        .slide-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            font-size: 0.8em; 
+            color: var(--alte-secondary-text);
+            text-align: right;
+            border-top: 1px solid var(--alte-border-color);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            body {
+                padding: 0; 
+            }
+            .presentation-container {
+                padding: 10px; 
+            }
+            .slide {
+                padding: 30px 20px; 
+                min-height: auto; 
+            }
+            .slide-content {
+                padding: 0;
+            }
+            h1 { font-size: 2.2em; }
+            .slide.cover h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.25em; }
+            p, ul li { font-size: 0.95em; }
+
+            .card-container { grid-template-columns: 1fr; }
+            .workflow-viz-container { flex-direction: column; }
+            .workflow-arrow { transform: rotate(90deg); margin: 15px 0; }
+            
+            .slide.cover .client-logo { max-width: 150px; }
+            .cta-button { padding: 10px 20px; font-size: 0.9em; }
+        }
+
+        /* Estilos de Impresión */
+        @media print {
+            body {
+                background-color: var(--alte-card-background); /* Fondo blanco para impresión */
+                color: var(--alte-text-on-light); /* Texto oscuro por defecto */
+                -webkit-print-color-adjust: exact; /* Para que Chrome/Safari impriman colores de fondo */
+                print-color-adjust: exact; /* Estándar */
+            }
+            .presentation-container {
+                max-width: none; /* Ocupar todo el ancho */
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+            .slide {
+                page-break-after: always; /* Salto de página después de cada slide */
+                box-shadow: none; /* Sin sombras en impresión */
+                border: 1px solid var(--alte-border-color); /* Un borde sutil puede ayudar */
+                margin-bottom: 0; /* Sin margen inferior entre slides en la misma página (aunque habrá salto) */
+                padding: 40px; /* Ajustar padding para impresión si es necesario */
+                min-height: 0; /* Dejar que el contenido defina la altura */
+                border-radius: 0; /* Sin bordes redondeados en impresión */
+            }
+            .slide:last-of-type {
+                page-break-after: auto; /* Evitar salto de página después de la última slide */
+            }
+            .slide.cover { /* Asegurar que los colores de la portada se impriman */
+                background-color: var(--alte-primary-blue) !important;
+                color: var(--alte-text-on-dark) !important;
+            }
+            .slide.cover h1, .slide.cover h1 strong, .slide.cover p, .slide.cover .consultant-info {
+                color: var(--alte-text-on-dark) !important;
+            }
+            .client-logo { /* Podría necesitar ajustes si es PNG con transparencia sobre fondo oscuro */
+                filter: brightness(0) invert(1); /* Intento de invertir logo si es oscuro para fondo oscuro */
+            }
+            .slide.cover .client-logo { /* Específico para la portada */
+                 /* No invertir si ya es blanco */
+                 filter: none;
+            }
+
+            .cta-button { /* Ocultar botones en impresión o estilizarlos diferente */
+                display: none; 
+            }
+            .slide-footer {
+                border-top: 1px solid var(--alte-border-color);
+            }
+             h2 { /* Asegurar que el borde inferior de h2 se imprima */
+                border-bottom: 2px solid var(--alte-primary-blue) !important;
+            }
+            .highlight { /* Asegurar que el fondo del highlight se imprima */
+                background-color: var(--alte-highlight-background) !important;
+                color: var(--alte-primary-blue) !important;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+
+        <!-- Diapositiva 1: Portada -->
+        <section class="slide cover">
+            <div class="slide-content">
+                <img src="https://static.wixstatic.com/media/0878b2_be2ad98833a447ce993c4f23ab7753ef~mv2.png" alt="ALTE Luxury Travel Logo" class="client-logo">
+                <h1>IA para <strong>ALTE Luxury Travel</strong>: Resultados Prácticos Hoy, Innovación Sostenible Mañana</h1>
+                <p>Una propuesta enfocada en implementar soluciones de IA tangibles para optimizar su operación y sentar bases sólidas para el futuro del viaje de lujo.</p>
+                <p class="consultant-info">Presentado por Ramón Sampayo, Ukko (ukko.mx)</p>
+            </div>
+        </section>
+
+        <!-- Diapositiva 2: El Potencial Real de la IA Hoy -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>El Potencial Real de la IA para ALTE, Hoy Mismo</h2>
+                <p>La Inteligencia Artificial ofrece herramientas concretas que pueden aportar valor inmediato a ALTE Luxury Travel. No se trata de promesas lejanas, sino de <span class="highlight">soluciones prácticas para los desafíos actuales</span> en el sector de viajes de lujo:</p>
+                <ul>
+                    <li><strong>Optimización del Tiempo del Equipo:</strong> Liberar a sus expertos de tareas repetitivas para que se enfoquen en la personalización y el servicio de alto valor que los distingue.</li>
+                    <li><strong>Consistencia y Calidad Mejoradas:</strong> Estandarizar communications y procesos internos, asegurando la excelencia en cada interacción.</li>
+                    <li><strong>Acceso Instantáneo a Información Clave:</strong> Poner el conocimiento de ALTE al alcance de su equipo de forma rápida y eficiente.</li>
+                </ul>
+                <p>Nuestro enfoque es pragmático: implementar lo que funciona hoy y prepararlos inteligentemente para las innovaciones del mañana.</p>
+            </div>
+        </section>
+        
+        <!-- Diapositiva 3: Fase 1 - El Corazón de Nuestra Propuesta (PARTE 1: Consultoría y Chat Interno) -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Fase 1 (Parte A): Consultoría Estratégica y su Asistente de IA Interno</h2>
+                <h4>Acciones Concretas y Beneficios Tangibles (3-6 meses)</h4>
+                <p>Esta fase inicial es fundamental y se centra en proporcionarles herramientas poderosas y seguras desde el primer día, con un control total por parte de ALTE.</p>
+                
+                <h3>1. Consultoría Detallada para Maximizar el Impacto:</h3>
+                <p>Comenzaremos con un <span class="highlight">análisis profundo de sus operaciones diarias</span>. A través de talleres con su equipo, identificaremos las tareas específicas donde un asistente de IA puede ofrecer el mayor ahorro de tiempo y mejora de calidad. Esto nos permitirá diseñar soluciones verdaderamente útiles.</p>
+                
+                <h3>2. Su "Asistente de IA Interno" Personalizado:</h3>
+                <p>Implementaremos una plataforma de chat inteligente, como un "ChatGPT privado", <span class="highlight">exclusiva para ALTE, segura y bajo su control</span>. Lo crucial aquí es que no será una herramienta genérica. <strong>Lo que pueden esperar es que cada empleado o rol pueda tener sus propios "asistentes o agentes de IA" especializados</strong>, diseñados para ayudarles en una o varias de sus funciones clave:</p>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Asistentes Especializados por Rol/Tarea</h3>
+                        <p>Cada miembro del equipo podrá interactuar con asistentes de IA configurados con "instrucciones" específicas para sus necesidades:</p>
+                        <ul class="sub-list">
+                            <li><strong>Para Ventas:</strong> Un asistente que ayude a redactar borradores de propuestas de viaje, buscar rápidamente detalles de proveedores o generar descripciones de destinos alineadas con el estilo de ALTE.</li>
+                            <li><strong>Para Soporte al Cliente:</strong> Un asistente que proporcione respuestas rápidas y estandarizadas a preguntas frecuentes (FAQs), valide que la información proporcionada cumple con los SOPs de ALTE, o ayude a encontrar rápidamente políticas específicas.</li>
+                            <li><strong>Para Marketing:</strong> Un asistente que genere ideas para contenido, refine textos para campañas o ayude a investigar tendencias en viajes de lujo.</li>
+                            <li><strong>Para Operaciones:</strong> Un asistente que ayude a verificar checklists, recordar procedimientos o buscar información en manuales internos.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Acceso Centralizado a su Conocimiento</h3>
+                        <p>Estos asistentes podrán <span class="highlight">conectarse de forma segura a la base de conocimientos interna de ALTE</span> (documentos, catálogos, información de destinos, políticas). Esto significa que las respuestas y la información generada estarán basadas en sus propios datos, garantizando precisión y relevancia.</p>
+                        <p><em>Ejemplo: Preguntar "Detalles del resort X en Maldivas para luna de miel" y obtener información directamente de sus catálogos.</em></p>
+                    </div>
+                </div>
+
+                <h4>Beneficios Directos y Medibles para ALTE:</h4>
+                <ul>
+                    <li><strong>Estandarización y Cumplimiento de SOPs:</strong> Asegurar que las comunicaciones y procesos sigan los altos estándares de ALTE.</li>
+                    <li><strong>Reducción Drástica de Tiempos de Investigación:</strong> Acceso inmediato a información que antes tomaba minutos u horas encontrar.</li>
+                    <li><strong>Optimización de la Carga de Trabajo:</strong> Permitir que el equipo se enfoque en tareas de mayor valor añadido y creatividad, en lugar de tareas repetitivas.</li>
+                    <li><strong>Control Total y Privacidad de Datos:</strong> Su información sensible nunca sale de su entorno controlado.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Diapositiva 4: Fase 1 - El Corazón de Nuestra Propuesta (PARTE 2: Herramientas Externas y Capacitación) -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Fase 1 (Parte B): Herramientas Externas Estratégicas y Capacitación Práctica</h2>
+                <h4>Acciones Concretas y Beneficios Tangibles (3-6 meses, en paralelo)</h4>
+
+                <h3>3. Análisis y Recomendación de Herramientas Externas (SaaS):</h3>
+                <p>En paralelo a la implementación de su asistente interno, realizaremos un <span class="highlight">diagnóstico de herramientas de IA ya existentes en el mercado</span> que pueden ofrecer beneficios específicos e inmediatos a ALTE. No se trata de adoptar tecnología por adoptarla, sino de identificar soluciones probadas que complementen su operación. Algunos ejemplos de funcionalidades que podríamos explorar incluyen:</p>
+                <div class="card-container" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));"> <!-- Ajuste para 3 columnas si es posible -->
+                    <div class="card">
+                        <div class="card-icon">🎙️</div>
+                        <h3>Transcripción y Documentación Automática</h3>
+                        <p>Herramientas que <span class="highlight">transforman audio de reuniones o notas de voz en texto buscable</span>, ahorrando tiempo en documentación y creando un archivo de interacciones con clientes.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧠</div>
+                        <h3>Gestión Inteligente del Conocimiento Interno</h3>
+                        <p>Sistemas para <span class="highlight">crear un repositorio centralizado de información</span> (destinos, políticas, proveedores) con búsqueda inteligente, asegurando que el equipo acceda siempre a datos actualizados.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🗺️</div>
+                        <h3>Creación de Itinerarios Personalizados</h3>
+                        <p>Plataformas diseñadas para agencias que facilitan la <span class="highlight">creación de itinerarios detallados y personalizados con la marca de ALTE</span>, mejorando la presentación al cliente.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💬</div>
+                        <h3>Soporte al Cliente con Chatbots</h3>
+                        <p>Soluciones de chatbot con IA para <span class="highlight">gestionar consultas frecuentes 24/7</span>, ofrecer recomendaciones básicas y calificar leads, liberando al equipo para interacciones complejas.</p>
+                    </div>
+                     <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>Asistentes Virtuales para Ventas y Servicio</h3>
+                        <p>Herramientas que pueden actuar como un "agente virtual", <span class="highlight">interactuando con clientes, planificando viajes básicos e incluso integrándose con sistemas de reserva</span> para datos en tiempo real.</p>
+                    </div>
+                </div>
+                <p>Les presentaremos un <span class="highlight">informe claro con opciones, costos y beneficios esperados</span>, para que tomen decisiones informadas.</p>
+
+                <h3>4. Capacitación Práctica y Monitoreo del Uso:</h3>
+                <p>La mejor herramienta solo es útil si se sabe usar. Ofreceremos <span class="highlight">sesiones de capacitación enfocadas en casos de uso reales para ALTE</span>. Además, estableceremos mecanismos para <span class="highlight">visualizar cómo se está utilizando la plataforma interna</span>, lo que nos permitirá optimizarla continuamente y demostrar su valor con datos concretos.</p>
+                
+                <h4>Lo que ALTE Ganará con la Fase 1 Completa:</h4>
+                <p>Al finalizar esta fase, ALTE contará con una <span class="highlight">base sólida de IA</span>: un asistente interno seguro y personalizado para cada rol, recomendaciones claras sobre herramientas externas de valor, y un equipo capacitado para aprovechar estas tecnologías. Esto se traducirá en <span class="highlight">eficiencia operativa medible y una mejor capacidad de respuesta</span>.</p>
+                <p><strong>Inversión Estimada Fase 1 (A y B):</strong> $5,000 - $15,000 USD (Dólares Estadounidenses), a detallar según alcance final.</p>
+            </div>
+        </section>
+        
+        <!-- Diapositiva 5: Mirando Hacia el Futuro: Automatización Avanzada (Fase 2) -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Mirando Hacia el Futuro: Automatización Avanzada y Soluciones a Medida (Fase 2)</h2>
+                <h4>El Siguiente Paso Lógico, Basado en Fundamentos Sólidos (6-18 meses post-Fase 1)</h4>
+                <p>Una vez que ALTE esté utilizando eficazmente las herramientas de la Fase 1 y tengamos una comprensión profunda de sus sistemas (ERPs, CRMs, etc.), podremos explorar la siguiente etapa: el desarrollo de <span class="highlight">soluciones de IA más especializadas y agentes inteligentes</span>.</p>
+                <p>Esta fase es donde la tecnología de IA emergente puede empezar a ofrecer automatizaciones más complejas. Sin embargo, es crucial abordarla con realismo: <span class="highlight">requiere un análisis previo detallado de sus sistemas actuales</span> y una definición clara de objetivos alcanzables.</p>
+                
+                <h4>¿Qué Podríamos Explorar en esta Fase Futura?</h4>
+                <ul>
+                    <li><strong>Agentes de Asistencia para Tareas Específicas:</strong> Por ejemplo, un agente que ayude a verificar disponibilidad en múltiples sistemas de proveedores o a pre-completar documentación de viaje.</li>
+                    <li><strong>Sistemas de Recomendación Más Sofisticados:</strong> Basados en el análisis de datos de clientes (siempre con su consentimiento y control) para sugerir experiencias aún más personalizadas.</li>
+                    <li><strong>Optimización de Flujos de Trabajo Complejos:</strong> Identificar cuellos de botella en procesos que involucren varios sistemas y ver cómo la IA podría agilizarlos.</li>
+                </ul>
+                <p><strong>Importante:</strong> Cualquier desarrollo en esta fase se planteará con <span class="highlight">propuestas pragmáticas, metas realizables y un entendimiento claro de la inversión y el retorno esperado</span>. No propondremos nada que no tenga una aplicación práctica y beneficiosa para ALTE.</p>
+                <p>La Fase 1 nos dará la información necesaria para definir con precisión qué es viable y valioso para ALTE en esta etapa más avanzada.</p>
+            </div>
+        </section>
+
+        <!-- Diapositiva 6: Visión a Muy Largo Plazo (Fase 3 Opcional y Breve) -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Visión a Muy Largo Plazo: Innovación Continua</h2>
+                <h4>Más Allá de los 18 Meses</h4>
+                <p>El mundo de la IA evoluciona rápidamente. Nuestra visión a largo plazo es acompañar a ALTE en este viaje, ayudándoles a <span class="highlight">identificar y adoptar continuamente las innovaciones que aporten valor real</span> a su negocio y mantengan su posición de liderazgo en el sector de viajes de lujo.</p>
+                <p>Esto podría incluir la exploración de tecnologías más avanzadas a medida que maduren y demuestren su aplicabilidad práctica para ALTE.</p>
+            </div>
+        </section>
+        
+        <!-- Diapositiva 7: Nuestra Propuesta de Valor: Pragmatismo y Resultados -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>Nuestra Propuesta de Valor: Pragmatismo, Control y Resultados</h2>
+                <p>En Ukko, nos enfocamos en ofrecer soluciones de IA que sean <span class="highlight">realistas, implementables y que generen beneficios tangibles</span> para ALTE Luxury Travel desde el inicio. Nuestra propuesta se basa en:</p>
+                <ul>
+                    <li><strong>Consultoría Honesta y Directa:</strong> Analizamos sus necesidades reales y proponemos soluciones prácticas, sin promesas exageradas.</li>
+                    <li><strong>Prioridad en la Privacidad y Control de Datos:</strong> Las herramientas internas que implementamos mantienen su información segura y bajo su gestión.</li>
+                    <li><strong>Enfoque en la Adopción y el Uso Real:</strong> La capacitación y el monitoreo son clave para asegurar que la IA se convierta en un aliado diario para su equipo.</li>
+                    <li><strong>Construcción de Bases Sólidas:</strong> La Fase 1 está diseñada para crear una plataforma robusta sobre la cual se puedan construir futuras innovaciones de manera informada y estratégica.</li>
+                </ul>
+                <h4>Modelo de Colaboración:</h4>
+                <p>Proponemos una inversión clara para la Fase 1, con entregables definidos. Las fases futuras se presupuestarán por separado, basándose en análisis detallados y objetivos acordados conjuntamente.</p>
+            </div>
+        </section>
+
+        <!-- Diapositiva 8: Próximos Pasos Concretos -->
+        <section class="slide">
+            <div class="slide-content text-center">
+                <h2>Próximos Pasos Concretos</h2>
+                <p>Creemos firmemente que la Fase 1 de esta propuesta puede aportar un valor significativo e inmediato a ALTE Luxury Travel. Les invitamos a dar el primer paso hacia una optimización inteligente de sus operaciones.</p>
+                <img src="https://static.wixstatic.com/media/0878b2_645a6aba84bb4b74b84e888b752b8f46%7Emv2.png" alt="Inspiración ALTE" style="max-width: 300px; border-radius: 8px; margin: 20px auto; display: block;">
+                <p>Proponemos una <span class="highlight">reunión de trabajo enfocada en la Fase 1</span>. En esta sesión, podemos:</p>
+                <ul>
+                    <li style="text-align: left;">Profundizar en cómo la consultoría inicial identificaría los puntos de mayor impacto.</li>
+                    <li style="text-align: left;">Mostrarles un ejemplo práctico de cómo funcionaría su "Asistente de Chat Interno" y los "asistentes especializados por rol".</li>
+                    <li style="text-align: left;">Definir el alcance de un posible proyecto piloto, por ejemplo, enfocado en optimizar la redacción de propuestas o el acceso a información de destinos específicos.</li>
+                </ul>
+                
+                <a href="mailto:ramon@ukko.mx?subject=Propuesta%20IA%20Pr%C3%A1ctica%20para%20ALTE%20Luxury%20Travel%20-%20Siguientes%20Pasos" class="cta-button">Agendar Reunión de Trabajo (Fase 1)</a>
+                
+                <p style="margin-top: 30px; font-size: 0.9em;">Agradecemos su tiempo y la oportunidad de presentar una propuesta enfocada en resultados reales.</p>
+            </div>
+            <div class="slide-footer">
+                Propuesta para ALTE Luxury Travel | Ukko (ukko.mx) | <span id="currentYear"></span>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
