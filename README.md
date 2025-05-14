@@ -1,98 +1,91 @@
-# Naviio - Colección de Prototipos
+# Naviio Prototypes
 
-Este repositorio contiene una colección de prototipos web para diversos proyectos, organizados para fácil navegación y despliegue.
+This repository contains prototypes for the Naviio dashboard with KPI visualizations and metrics tracking.
 
-## Estructura del Proyecto
+## Local Development
 
-```
-naviio/
-├── index.html                  # Página principal que lista todos los prototipos
-├── prototypes/                 # Directorio principal de prototipos
-│   ├── common/                 # Recursos compartidos entre prototipos
-│   │   ├── css/                # Estilos CSS comunes
-│   │   ├── js/                 # Scripts JavaScript comunes
-│   │   └── img/                # Imágenes comunes
-│   │
-│   ├── kpi-dashboard/          # Prototipo de Dashboard de KPIs
-│   │   ├── index.html          # Archivo HTML principal del prototipo
-│   │   ├── css/                # Estilos específicos del prototipo
-│   │   ├── js/                 # Scripts específicos del prototipo
-│   │   └── img/                # Imágenes específicas del prototipo
-│   │
-│   └── [otros-prototipos]/     # Otros prototipos siguiendo la misma estructura
-│
-└── README.md                   # Este archivo
+To run this project locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Serve locally
+npx serve
 ```
 
-## Prototipos Disponibles
+Then open http://localhost:3000 in your browser.
 
-### Dashboard CEO Transporte
-Un dashboard interactivo que muestra KPIs y métricas clave para la gestión de operaciones de transporte. Incluye visualizaciones para ventas, utilización de flota, entregas a tiempo y otros indicadores importantes.
+## Deployment
 
-## Despliegue con GitHub Pages
+### Option 1: Deploy to public.ka-ve.io (Production)
 
-Este proyecto está estructurado para ser fácilmente desplegado utilizando GitHub Pages.
+This project is configured to deploy to the StaticDeploy instance at `public.ka-ve.io`.
 
-Para acceder al sitio deployed con GitHub Pages:
-1. Visita https://rsampayo.github.io/naviio-prototypes/
+1. Make sure you have the necessary credentials for StaticDeploy
+2. Run the deployment script:
 
-## Despliegue con StaticDeploy
+```bash
+./deploy-to-ka-ve.sh
+```
 
-Este proyecto también puede ser desplegado utilizando [StaticDeploy](https://github.com/staticdeploy/staticdeploy), una plataforma open-source para desplegar aplicaciones web estáticas.
+This script will:
+- Check if the StaticDeploy API is accessible
+- Install dependencies
+- Build the static bundle
+- Prompt for your StaticDeploy API token if needed
+- Deploy the bundle to public.ka-ve.io
 
-### Despliegue a public.ka-ve.io
+After successful deployment, your site will be available at https://public.ka-ve.io/
 
-Para desplegar el proyecto a nuestra instancia de StaticDeploy en public.ka-ve.io:
+### Option 2: Local StaticDeploy for Testing
 
-1. Asegúrate de tener Node.js instalado (versión 12 o superior)
-2. Ejecuta el script de despliegue incluido:
-   ```bash
-   ./deploy-to-ka-ve.sh
-   ```
-3. Proporciona tu token de API de StaticDeploy cuando se te solicite
-4. El sitio estará disponible en https://public.ka-ve.io/
+If you want to test deployment locally before pushing to production:
 
-### Despliegue manual con StaticDeploy CLI
+1. Run the setup script:
 
-Si necesitas desplegar manualmente:
+```bash
+./setup-staticdeploy.sh
+```
 
-1. Instala las dependencias:
-   ```bash
-   npm install
-   ```
+This will:
+- Install StaticDeploy CLI globally if not already installed
+- Start a local StaticDeploy instance with in-memory storage
+- Provide instructions for updating your configuration
 
-2. Construye el bundle:
-   ```bash
-   npm run build
-   ```
+2. Update your `staticdeploy-config.json` to use localhost:
+```json
+{
+  "hosts": ["localhost:3000"],
+  "configuration": {
+    "BASE_URL": "/",
+    "API_URL": "http://localhost:3000/api",
+    "ENVIRONMENT": "development"
+  }
+}
+```
 
-3. Define las variables de entorno necesarias:
-   ```bash
-   export STATICDEPLOY_API_URL="https://public.ka-ve.io/api"
-   export STATICDEPLOY_API_TOKEN="tu-token-aqui"
-   ```
+3. Run the deployment script:
+```bash
+./deploy-to-ka-ve.sh
+```
 
-4. Despliega el bundle:
-   ```bash
-   npm run deploy
-   ```
+4. Access your local deployment at http://localhost:3000/
 
-## Desarrollo Local
+## Project Structure
 
-Para ejecutar este proyecto localmente:
+- `index.html` - Main dashboard entry point
+- `styles.css` - All styles for the dashboard
+- `script.js` - JavaScript functionality and KPI data
+- `staticdeploy-config.json` - Configuration for StaticDeploy
+- `scripts/prepare-bundle.js` - Script to prepare static files for deployment
+- `deploy-to-ka-ve.sh` - Deployment script
 
-1. Clone el repositorio
-2. Abra el archivo `index.html` en su navegador, o
-3. Configure un servidor web local (como Live Server en VSCode) para servir el directorio raíz
+## Adding New Prototypes
 
-## Agregar Nuevos Prototipos
+To add new prototypes:
 
-Para agregar un nuevo prototipo:
-
-1. Cree un nuevo directorio dentro de `/prototypes/` siguiendo la estructura establecida
-2. Actualice el archivo `index.html` raíz para incluir un enlace al nuevo prototipo
-3. Asegúrese de mantener la separación de recursos (CSS, JS, imágenes) dentro del directorio del prototipo
-
-## Licencia
-
-Este proyecto es privado y confidencial. 
+1. Create a new directory for your prototype
+2. Add all necessary HTML, CSS, and JS files
+3. Update the main index.html to link to your new prototype
+4. Deploy using the instructions above 
