@@ -1,0 +1,34 @@
+{
+  "name": "naviio-prototypes",
+  "version": "1.0.0",
+  "description": "Collection of interactive web prototypes organized for easy navigation and deployment",
+  "main": "index.js",
+  "scripts": {
+    "prepare-bundle": "node scripts/prepare-bundle.js",
+    "deploy": "staticdeploy deploy ./dist --config staticdeploy-config.json",
+    "build": "npm run prepare-bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsampayo/naviio-prototypes.git"
+  },
+  "keywords": [
+    "prototypes",
+    "dashboard",
+    "kpi",
+    "staticdeploy"
+  ],
+  "author": "Ramon Sampayo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsampayo/naviio-prototypes/issues"
+  },
+  "homepage": "https://github.com/rsampayo/naviio-prototypes#readme",
+  "dependencies": {
+    "@staticdeploy/cli": "^0.15.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.1.0"
+  }
+} 

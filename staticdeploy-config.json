@@ -1,0 +1,11 @@
+{
+  "bundleName": "naviio-prototypes",
+  "bundleTags": ["latest"],
+  "entrypoint": "/",
+  "hosts": ["public.ka-ve.io"],
+  "configuration": {
+    "BASE_URL": "/",
+    "API_URL": "https://public.ka-ve.io/api",
+    "ENVIRONMENT": "production"
+  }
+} 
